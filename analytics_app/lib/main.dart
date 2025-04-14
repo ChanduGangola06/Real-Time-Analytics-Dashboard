@@ -4,6 +4,7 @@ import 'package:analytics_app/screens/page_views_card.dart';
 import 'package:analytics_app/screens/session_duration_card.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+
 import 'services/websocket_service.dart';
 
 void main() {
@@ -16,6 +17,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Analytics Dashboard',
       theme: ThemeData(
         primarySwatch: Colors.blue,
@@ -88,7 +90,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                     ),
                     const SizedBox(height: 16),
                     Text(
-                      'Last updated: ${DateFormat('yyyy-MM-dd HH:mm:ss').format(DateTime.parse(_currentMetrics!.timestamp))}',
+                      'Last updated: ${DateFormat('yyyy-MM-dd HH:mm:ss').format(DateTime.parse(_currentMetrics!.timestamp).toLocal())}',
                       style: const TextStyle(fontSize: 12, color: Colors.grey),
                     ),
                   ],

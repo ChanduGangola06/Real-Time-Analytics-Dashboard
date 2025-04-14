@@ -3,12 +3,13 @@ import 'dart:convert';
 
 class WebSocketService {
   WebSocketChannel? _channel;
-  final String _url = 'ws://localhost:3001';
+  final String _url = 'wss://real-time-analytics-dashboard-dmtb.onrender.com';
 
   void connect() {
     try {
       _channel = WebSocketChannel.connect(Uri.parse(_url));
     } catch (e) {
+      // ignore: avoid_print
       print('WebSocket connection error: $e');
       // Attempt to reconnect after 5 seconds
       Future.delayed(const Duration(seconds: 5), () => connect());

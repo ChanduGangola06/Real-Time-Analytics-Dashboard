@@ -103,11 +103,3 @@ The application follows a client-server architecture with real-time data updates
   "avg_session_duration": 4.6
 }
 ```
-
-## Future Improvements
-
-- Add authentication and user management
-- Implement data persistence
-- Add more detailed analytics
-- Support custom date ranges
-- Add export functionality for reports 

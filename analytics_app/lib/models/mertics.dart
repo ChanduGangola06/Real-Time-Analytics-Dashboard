@@ -16,7 +16,7 @@ class Metrics {
       timestamp: json['timestamp'],
       activeUsers: json['active_users'],
       pageViews: json['page_views'],
-      avgSessionDuration: json['avg_session_duration'].toDouble(),
+      avgSessionDuration: double.parse(json['avg_session_duration'].toString()),
     );
   }
 }
